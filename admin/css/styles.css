@@ -1,0 +1,28 @@
+#card-data, #card-data td input,
+#card-data, #card-data td select {
+	width: 100%;
+}
+
+.column-wclc_user_id,
+.column-wclc_discount {
+	text-align: center !important;
+	width: 100px;
+}
+
+.column-wclc_user_id {
+    width: 200px;
+}
+
+#woocommerce-product-data ul.wc-tabs li.wc_loyalty_cards a::before {
+    font-family: 'dashicons';
+    content: '\f524';
+}
+
+#wclc-import-progress {
+    display:none;
+    margin-top:20px;
+}
+
+#wclc-import-progress progress {
+    width: 100%;
+}

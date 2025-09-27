@@ -1,0 +1,16 @@
+    <?php $checked = ( ( $type == 'checkbox' ) && ( $value == 1 ) ) ? ' checked="checked"' : '' ?>
+    <?php $value = ( $type == 'checkbox' ) ? 1 : $value; ?>
+
+    <?php if ( $type == 'checkbox' ): ?>
+    <input type="hidden" name="<?php echo esc_attr( $name ); ?>"
+           value="0" />
+    <?php endif; ?>
+
+    <input type="<?php echo esc_attr( $type ); ?>"
+           id="<?php echo esc_attr( $id ); ?>"
+           name="<?php echo esc_attr( $name ); ?>"
+           value="<?php echo esc_attr( $value ); ?>"
+           class="<?php echo ! empty( $class ) ? esc_attr( $class ) : ''; ?>"<?php echo $checked; ?> />
+    <?php if ( isset( $description ) ): ?>
+    <p class="description"><?php esc_html_e( $description ); ?></p>
+    <?php endif; ?>

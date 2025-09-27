@@ -1,0 +1,28 @@
+	<div class="wrap">
+		<h2><?php _e( 'Import/Export data from CSV file', 'sha-wclc' ); ?></h2>
+        <div id="wclc-notices"></div>
+        <div id="wclc-import-progress">
+            <progress id="wclc-progress-bar" value="0" max="0"></progress>
+        </div>
+		<h3><?php _e( 'Import data form CSV file', 'sha-wclc' ); ?></h3>
+		<form id="wclc-import-form" method="post" enctype="multipart/form-data">
+			<table class="form-table">
+				<tr valign="top">
+					<th scope="row"><?php _e( 'CSV file', 'sha-wclc' ); ?></th>
+					<td>
+                        <?php wp_nonce_field( $prefix . 'import_csv', $prefix . 'import_nonce' ); ?>
+						<input id="wclc_csv_file" type="file" name="<?php echo $prefix; ?>import_file" accept=".csv" style="width: 300px;" />
+						<input type="hidden" name="action" value="wclc_upload_csv" />
+					</td>
+				</tr>
+			</table>
+			<?php submit_button( __( 'Import cards', 'sha-wclc' ), 'primary', '', false, array( 'disabled' => 'disabled', 'id' => 'wclc_import_btn' ) ); ?>
+		</form>
+		<hr />
+		<h3><?php _e( 'Export data to CSV file', 'sha-wclc' ); ?></h3>
+		<form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+            <?php wp_nonce_field( $prefix . 'export_csv', $prefix . 'export_nonce' ); ?>
+            <input type="hidden" name="action" value="wclc_export_cards">
+			<?php submit_button( __( 'Export cards', 'sha-wclc' ) ); ?>
+		</form>
+	</div>

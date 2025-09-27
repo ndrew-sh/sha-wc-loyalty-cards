@@ -1,0 +1,18 @@
+<table id="card-data">
+	<tr>
+		<td>
+			<?php _e( 'User', 'sha-wclc' ); ?>
+		</td>
+		<td>
+            <?php echo $users_dropdown; ?>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<?php _e( 'Discount amount (%)', 'sha-wclc' ); ?>
+		</td>
+		<td>
+			<input type="text" id="<?php echo $prefix; ?>discount" name="<?php echo $prefix; ?>discount" value="<?php echo esc_attr( $discount ); ?>" />
+		</td>
+	</tr>
+</table>

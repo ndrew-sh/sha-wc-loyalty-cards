@@ -1,0 +1,38 @@
+	<div class="wrap">
+		<h2><?php _e( 'Generate cards', 'sha-wclc' ); ?></h2>
+		<div id="wclc-notices"></div>
+        <div id="wclc-import-progress">
+            <progress id="wclc-progress-bar" value="0" max="0"></progress>
+        </div>
+		<form id="wclc-generate-form">
+            <?php wp_nonce_field( $prefix . 'generate_cards', $prefix . 'nonce' ); ?>
+            <table class="form-table">
+                <tr valign="top">
+                    <th scope="row"><label for="wclc_amount"><?php _e( 'Amount of generated cards', 'sha-wclc' ); ?></label></th>
+                    <td>
+                        <input id="wclc_amount" type="text" name="amount" value="" class="regular-text">
+                        <p class="description"><?php _e( 'Amount of cards you want to generate', 'sha-wclc' ); ?></p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row"><label for="wclc_card_length"><?php _e( 'Cards Number length', 'sha-wclc' ); ?></label></th>
+                    <td>
+                        <input id="wclc_card_length" type="text" name="card_length" value="" class="regular-text">
+                        <p class="description"><?php _e( 'How many characters should be in the card number?', 'sha-wclc' ); ?></p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row"><label for="wclc_generation_rule"><?php _e( 'Generation Rule', 'sha-wclc' ); ?></label></th>
+                    <td>
+                        <select id="wclc_generation_rule" name="generation_rule">
+                            <option value="numbers"><?php _e( 'Only numbers', 'sha-wclc' ); ?></option>
+                            <option value="letters"><?php _e( 'Only letters', 'sha-wclc' ); ?></option>
+                            <option value="mixed"><?php _e( 'Letters and numbers', 'sha-wclc' ); ?></option>
+                        </select>
+                        <p class="description"><?php _e( 'Rule for card generation', 'sha-wclc' ); ?></p>
+                    </td>
+                </tr>
+            </table>
+			<button id="wclc-generate-btn" class="button button-primary"><?php _e( 'Generate cards', 'sha-wclc' ); ?></button>
+		</form>
+	</div>

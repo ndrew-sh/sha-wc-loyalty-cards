@@ -1,0 +1,16 @@
+<div id='wclc_options' class='panel woocommerce_options_panel'>
+	<div class='options_group'>
+        <input type="hidden" name="<?php echo $prefix . 'exclude_from_discount'; ?>" value="0" />
+		<?php
+            woocommerce_wp_checkbox(
+                array(
+                    'id'            => $prefix . 'exclude_from_discount',
+                    'label'         => __( 'Exclude from discount', 'sha-wclc' ),
+                    'value'         => $checked,
+                    'cbvalue'       => 1,
+                    'description'   => __( 'If checked, this product excluded from discount calculation on checkout', 'sha-wclc' )
+                )
+            );
+		?>
+	</div>
+</div>
